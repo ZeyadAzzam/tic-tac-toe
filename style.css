@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Permanent+Marker&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,200;1,800&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+body {
+    display: flex;
+    flex-direction: column; /* Display flex items vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(222, 215, 215);
+
+}
+
+.game-title {
+
+color: darkorchid ;
+    font-size: 36px;
+margin-bottom: 1rem;
+font-family: 'Press Start 2P';
+
+}
+
+.game-title:hover {
+
+    color: rgb(53, 12, 53);
+    transition: color 0.5s ease;
+
+}
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 15vh);
+    grid-template-rows: repeat(3, 15vh );
+    gap: 1px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: #ffffff;
+    border: 2px solid darkorchid;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+    font-family: 'Permanent Marker';
+
+}
+
+.cell:hover {
+    background-color: #df6060;
+}
+
+.btn {
+    --color: #cca2cc;
+    --color2: rgb(0, 0, 0);
+    padding: 0.2em 1em;
+    background-color: transparent;
+    border-radius: 6px;
+    border: .3px solid var(--color);
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-top: 2rem;
+   }
+   
+   .btn::after, .btn::before {
+    content: '*';
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-20%, -20%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: var(--color);
+   }
+   
+   .btn::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+   }
+
+   .result-message {
+
+    color:  green;
+   }
+   .turn-message {
+
+    color:  darkorchid;
+   }
+   
+   
+
